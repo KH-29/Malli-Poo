@@ -117,13 +117,13 @@ button{
 </style>
 </head>
 <body>
-<!-- AUDIO -->
+<!-- LOCAL BACKGROUND MUSIC -->
 <audio id="bgMusic" loop>
-<source src="ok-kanmani.mp3" type="audio/mpeg">
+<source src="./naan-un.mp3" type="audio/mpeg">
 </audio>
 <!-- PAGE 1 -->
 <div class="page" id="proposalPage">
-<h1>Happy Valentine’s Day My Love ❤️</h1>
+<h1>Happy Valentine’s Day My Love! ❤️</h1>
 <h2>Will you be my Valentine, Mallipoo? 💌</h2>
 <button onclick="goToQuotes()">Yes 💖</button>
 <button class="no" id="noBtn">No 🙈</button>
@@ -134,16 +134,16 @@ button{
 <div class="quoteBox">
 <p><b>After you, I finally feel complete.</b><br>
 
-       Like every missing piece of my soul found its home in you.</p>
+       Like every missing piece of my soul quietly found its home in you.</p>
 <p><b>You were the rain in my desert.</b><br>
 
-       You made my world bloom again.</p>
-<p><b>You are my sunshine and my moonlight.</b><br>
+       When my world was dry and tired, you came and made everything bloom again.</p>
+<p><b>You are my sunshine in the mornings and my moonlight in the dark times.</b><br>
 
-       Even in dark times, you are my light.</p>
-<p><b>No greys in our love — only black and white.</b><br>
+       Even when life feels heavy, you are the light that never leaves me.</p>
+<p><b>I promise there are no greys in our love — only black and white.</b><br>
 
-       Only clarity. Only forever.</p>
+       No confusion. No doubt. Just loyalty, clarity, and forever.</p>
 </div>
 <button onclick="nextPage()">Next ❤️</button>
 </div>
@@ -153,14 +153,30 @@ button{
 <div class="quoteBox">
 <p><b>I’m already yours.</b><br>
 
-       Completely and forever.</p>
-<p><b>I will never get tired of loving you.</b></p>
-<p><b>I can sing, dance, and make your belly laugh till it hurts.</b></p>
-<p><b>Forever isn’t long enough if it’s with you ❤️</b></p>
+       Completely. Fully. Without hesitation.</p>
+<p><b>I will never get tired of loving you.</b><br>
+
+       Loving you is not a duty — it’s my happiness.</p>
+<p><b>For you, I can sing even when I’m shy, dance even when there’s no music, and make your belly laugh until it hurts.</b></p>
+<p><b>With you, I don’t just exist. I live.</b></p>
+<p><b>If love had a face, it would look like you.</b></p>
+<p><b>Forever isn’t long enough if it’s with you. ❤️</b></p>
 </div>
 <button onclick="backPage()">Back 💖</button>
 </div>
 <script>
+
+// Play music after first click (required by browser)
+
+document.body.addEventListener("click", function(){
+
+   var music = document.getElementById("bgMusic");
+
+   music.play();
+
+}, { once: true });
+
+// YES BUTTON
 
 function goToQuotes(){
 
@@ -168,11 +184,9 @@ function goToQuotes(){
 
    document.getElementById("page1").classList.remove("hidden");
 
-   var music = document.getElementById("bgMusic");
-
-   music.play();
-
 }
+
+// NEXT PAGE
 
 function nextPage(){
 
@@ -182,6 +196,8 @@ function nextPage(){
 
 }
 
+// BACK PAGE
+
 function backPage(){
 
    document.getElementById("page2").classList.add("hidden");
@@ -189,6 +205,8 @@ function backPage(){
    document.getElementById("page1").classList.remove("hidden");
 
 }
+
+// Floating NO Button
 
 var noBtn = document.getElementById("noBtn");
 
@@ -203,6 +221,8 @@ noBtn.addEventListener("mouseover", function(){
    noBtn.style.top = y + "px";
 
 });
+
+// Floating Hearts
 
 setInterval(function(){
 
